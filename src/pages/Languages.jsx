@@ -20,6 +20,7 @@ export default function Languages() {
     <div style={container}>
       <h2 style={title}>Languages</h2>
 
+      {/* Input and Add Button */}
       <div style={inputWrapper}>
         <input
           type="text"
@@ -29,11 +30,12 @@ export default function Languages() {
           onKeyDown={(e) => e.key === "Enter" && handleAdd()}
           style={inputStyle}
         />
-        <button onClick={handleAdd} style={btnStyle}>
+        <button onClick={handleAdd} style={buttonStyle}>
           Add
         </button>
       </div>
 
+      {/* Language List */}
       <ul style={listStyle}>
         {list.map((l, i) => (
           <li key={i} style={listItem}>
@@ -48,14 +50,18 @@ export default function Languages() {
         ))}
       </ul>
 
-      <button onClick={() => navigate("/projects")} style={{ ...btnStyle, marginTop: 20 }}>
+      {/* Next Button */}
+      <button
+        onClick={() => navigate("/projects")}
+        style={{ ...buttonStyle, marginTop: 20 }}
+      >
         Next
       </button>
     </div>
   );
 }
 
-
+/* Styles */
 const container = {
   maxWidth: 500,
   margin: "50px auto",
@@ -84,9 +90,9 @@ const inputStyle = {
   fontSize: 14,
 };
 
-const btnStyle = {
+const buttonStyle = {
   padding: "10px 18px",
-  backgroundColor: "blackc",
+  backgroundColor: "black",
   color: "#fff",
   border: "none",
   borderRadius: 6,
@@ -112,11 +118,8 @@ const listItem = {
 };
 
 const deleteBtn = {
-  background: "#ff4d4f",
-  border: "none",
-  color: "#fff",
+  ...buttonStyle,
+  backgroundColor: "#ff4d4f",
   padding: "4px 8px",
-  borderRadius: 4,
-  cursor: "pointer",
   fontSize: 12,
 };
