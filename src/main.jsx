@@ -10,7 +10,7 @@ import './index.css';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
     <ResumeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/resume-builder2">
         <App />
       </BrowserRouter>
     </ResumeProvider>
