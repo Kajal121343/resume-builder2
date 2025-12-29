@@ -8,11 +8,28 @@ export default function TemplateSelection() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+ 
   const templates = [
-    { id: 1, img: "/templates/template1.png", type: "Professional" },
-    { id: 2, img: "/templates/template2.jpg", type: "Creative" },
-    { id: 3, img: "/templates/template3.png", type: "Minimal" },
-    { id: 4, img: "/templates/template4.png", type: "Modern" },
+    {
+      id: 1,
+      img: `${import.meta.env.BASE_URL}templates/template1.png`,
+      type: "Professional",
+    },
+    {
+      id: 2,
+      img: `${import.meta.env.BASE_URL}templates/template2.jpg`,
+      type: "Creative",
+    },
+    {
+      id: 3,
+      img: `${import.meta.env.BASE_URL}templates/template3.png`,
+      type: "Minimal",
+    },
+    {
+      id: 4,
+      img: `${import.meta.env.BASE_URL}templates/template4.png`,
+      type: "Modern",
+    },
   ];
 
   const choose = (id) => {
@@ -22,10 +39,10 @@ export default function TemplateSelection() {
 
   return (
     <div className="container template-selection">
-      {/* Animated Background */}
+    
       <div className="animated-bg"></div>
 
-     
+      
       <header className="header">
         <h1 className="logo">ResumeBuilder</h1>
         <p className="tagline">Craft your dream resume in minutes!</p>
@@ -34,17 +51,16 @@ export default function TemplateSelection() {
      
       <section className="features">
         <div className="feature-card glow">
-          <i className="fa-solid fa-paintbrush"></i>
           <h3>Beautiful Designs</h3>
           <p>Templates that make your resume pop and impress recruiters.</p>
         </div>
+
         <div className="feature-card glow">
-          <i className="fa-solid fa-bolt"></i>
           <h3>Fast & Easy</h3>
           <p>Fill in your details and generate a polished resume in minutes.</p>
         </div>
+
         <div className="feature-card glow">
-          <i className="fa-solid fa-mobile-screen-button"></i>
           <h3>Responsive & Modern</h3>
           <p>Looks perfect on desktop, tablet, and mobile devices.</p>
         </div>
@@ -65,7 +81,7 @@ export default function TemplateSelection() {
               style={{ "--i": index }}
               onClick={() => choose(t.id)}
             >
-              <img src={t.img} alt={`template-${t.id}`} />
+              <img src={t.img} alt={`${t.type} template`} />
               <div className="overlay">
                 <span>{t.type} Template</span>
               </div>
@@ -74,7 +90,7 @@ export default function TemplateSelection() {
         </div>
       </section>
 
-    
+      {/* CTA */}
       <section className="cta glow-cta">
         <h3>Ready to get started?</h3>
         <p>Select a template and build your resume effortlessly.</p>
