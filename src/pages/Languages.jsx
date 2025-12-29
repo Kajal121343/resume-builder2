@@ -20,7 +20,7 @@ export default function Languages() {
     <div style={container}>
       <h2 style={title}>Languages</h2>
 
-      {/* Input and Add Button */}
+      
       <div style={inputWrapper}>
         <input
           type="text"
@@ -30,12 +30,12 @@ export default function Languages() {
           onKeyDown={(e) => e.key === "Enter" && handleAdd()}
           style={inputStyle}
         />
-        <button onClick={handleAdd} style={buttonStyle}>
+        <button onClick={handleAdd} style={fullButtonStyle}>
           Add
         </button>
       </div>
 
-      {/* Language List */}
+      
       <ul style={listStyle}>
         {list.map((l, i) => (
           <li key={i} style={listItem}>
@@ -50,10 +50,10 @@ export default function Languages() {
         ))}
       </ul>
 
-      {/* Next Button */}
+     
       <button
         onClick={() => navigate("/projects")}
-        style={{ ...buttonStyle, marginTop: 20 }}
+        style={{ ...fullButtonStyle, marginTop: 20 }}
       >
         Next
       </button>
@@ -90,7 +90,7 @@ const inputStyle = {
   fontSize: 14,
 };
 
-const buttonStyle = {
+const fullButtonStyle = {
   padding: "10px 18px",
   backgroundColor: "black",
   color: "#fff",
@@ -98,6 +98,7 @@ const buttonStyle = {
   borderRadius: 6,
   cursor: "pointer",
   fontSize: 14,
+  width: "100%", 
 };
 
 const listStyle = {
@@ -118,8 +119,9 @@ const listItem = {
 };
 
 const deleteBtn = {
-  ...buttonStyle,
+  ...fullButtonStyle,
   backgroundColor: "#ff4d4f",
   padding: "4px 8px",
   fontSize: 12,
+  width: "auto", 
 };
